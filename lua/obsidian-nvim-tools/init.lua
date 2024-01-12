@@ -18,11 +18,11 @@ local convertTitlesToWikiLinks = function(header)
 
   for line_num, line_content in ipairs(current_buffer) do
     if string.sub(line_content, 1, header_length) == header then
-      local title = string.sub(line_content, header_length)
+      local title = string.sub(line_content, header_length + 1)
       title = title:match('^%s*(.-)%s*$')
 
       if not string.match(title, '%[%[.*%]%]') then
-        local wiki_link = '[[' .. title .. ']]'
+        local wiki_link = header .. ' ' .. '[[' .. title .. ']]'
         current_buffer[line_num] = wiki_link
       end
     end
