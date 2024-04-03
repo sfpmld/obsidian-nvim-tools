@@ -16,3 +16,11 @@ end, {})
 nvim_create_user_command('ObsidianToolsConvertH4ToWikiLinks', function()
   require('obsidian-nvim-tools').convertH4ToWikiLinks()
 end, {})
+
+nvim_create_user_command('ObsidianToolsConvertKindleUriToLiveLinks', function()
+  require('obsidian-nvim-tools').convertKindleUriToLiveLinks()
+end, {})
+
+nvim_create_user_command('ObsidianToolsConvertBackLiveLinksToKindleUris', function()
+  require('obsidian-nvim-tools').convertBackLiveLinksToKindleUris()
+end, {})
